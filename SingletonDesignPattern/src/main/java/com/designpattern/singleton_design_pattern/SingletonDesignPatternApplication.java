@@ -9,7 +9,7 @@ public class SingletonDesignPatternApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SingletonDesignPatternApplication.class, args);
 
-		SingletonDesignPattern instance = SingletonDesignPattern.getInstance();
+		SingletonDesignPatternLazyInitialization instance = SingletonDesignPatternLazyInitialization.getInstance();
 		System.out.println(instance);
 	}
 
