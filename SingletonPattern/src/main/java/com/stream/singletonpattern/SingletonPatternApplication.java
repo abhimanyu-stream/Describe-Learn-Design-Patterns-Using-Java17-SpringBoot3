@@ -2,9 +2,11 @@ package com.stream.singletonpattern;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.client.RestTemplate;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 
 @SpringBootApplication
 public class SingletonPatternApplication {
@@ -12,11 +14,16 @@ public class SingletonPatternApplication {
 	public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 		SpringApplication.run(SingletonPatternApplication.class, args);
 
+ 		/*final String BASEURL = "http://localhost:9900/orders";
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.getForObject(BASEURL, ArrayList.class);*/
+
 
 		SingletonDesignPattern singletonDesignPattern1 = SingletonDesignPattern.getInstance();
 		System.out.println(singletonDesignPattern1.hashCode());
 		SingletonDesignPattern singletonDesignPattern2 = SingletonDesignPattern.getInstance();
 		System.out.println(singletonDesignPattern2.hashCode());
+
 
 
 
